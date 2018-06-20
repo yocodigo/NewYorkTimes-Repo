@@ -18,11 +18,6 @@ $( document ).ready(function() {
         let article = $('#articleInput').val();
         const select = $('select').val();
 
-        // console.log($("#label").html());
-        // console.log(beginDate);
-        // console.log(endDate);
-        // console.log(select);
-
         url += '?' + $.param({
             'api-key': key,
             'q': article,
@@ -34,12 +29,16 @@ $( document ).ready(function() {
             url: url,
             method: 'GET',
         }).done(function(result) {
+            let articleRow = $("<div>");
             
-            for(let i = 0; i <= select -1; i++) {
+            articleRow.attr("class", "row");
+            
+
+            for(let i = 0; i <= select - 1; i++) {
+                let column = $("<div>");
+                    column.attr("class", "col-md-3");
                 let div1 = $("<div>");
-                    div1.attr("class", "card");
-                    div1.attr("style", "width: 30rem"); 
-                    div1.attr("style", "margin: 30px, 40%");   
+                    div1.attr("class", "card articles");
                 let img1 = $("<img>");
                     img1.attr("class", "card-img-top");
                     img1.attr("src", "https://static01.nyt.com/" + result.response.docs[i].multimedia[1].url);
@@ -65,18 +64,19 @@ $( document ).ready(function() {
 
                 let site = $("<a>");
                     site.attr("href", result.response.docs[i].web_url);
-                    site.attr("class", "btn btn-primary");
+                    site.attr("class", "btn btn-primary articleLink");
                     site.attr("target", "_blank");
                     site.html("Go to Page");
 
                 div2.append(site);
-                
                 div1.append(div2);
-                
-                $("body").append(div1);
+                column.append(div1);
+                articleRow.append(column);
+
+                $("body").append(articleRow);
+
             }
             console.log(result);
-            console.log(result.response.docs[0].headline.main);
 
         }).fail(function(err) {
         

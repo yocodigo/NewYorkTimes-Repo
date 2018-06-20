@@ -1,6 +1,18 @@
-.card {
+.search {
     margin: 0px 20%;
 }
 h1, p {
     text-align: center;
+}
+.card-body {
+    position: relative;
+}
+.articleLink {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+.articles {
+    margin: 30px 20px;
+    height: 520px;
 }
