@@ -45,9 +45,9 @@ $( document ).ready(function() {
 
             for(let i = 0; i <= select - 1; i++) {
                 let column = $("<div>");
-                    column.attr("class", "col-md-3");
+                    column.attr("class", "col-md-3 article-col");
                 let div1 = $("<div>");
-                    div1.attr("class", "card articles");
+                    div1.attr("class", "card article-container");
                 let img1 = $("<img>");
                     img1.attr("class", "card-img-top");
                     img1.attr("src", "https://static01.nyt.com/" + result.response.docs[i].multimedia[1].url);
@@ -73,7 +73,7 @@ $( document ).ready(function() {
 
                 let site = $("<a>");
                     site.attr("href", result.response.docs[i].web_url);
-                    site.attr("class", "btn btn-primary articleLink");
+                    site.attr("class", "btn btn-primary article-link");
                     site.attr("target", "_blank");
                     site.html("Go to Page");
 

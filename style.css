@@ -1,22 +1,41 @@
-.col-md-3 {
-    padding-left: 0px; 
+.jumbotron {
+    margin-bottom: 15px;
 }
-.search {
-    margin: 0px 10%;
+.main-row {
+    padding: 0px 40px;
+}
+.search-col {
+    padding: 15px 15px 0px 0px; 
+    margin-bottom: 20px;
+}
+.article-col {
+    padding: 0px 20px 20px 0px; 
+}
+.results-col {
+    margin-top: 15px;
+}
+.articleRow {
+    padding: 0px 30px 0px 30px;
+}
+.search-container {
+    margin: 0px 0 20px 0px;
+    height: 580px;
 }
 h1, p {
     text-align: center;
 }
-.card-body {
+/* .card-body .search-body { */
+.card-body {    
     position: relative;
 }
-.articleLink {
+/* .article-link .search-btn { */
+a {    
     position: absolute;
     bottom: 0;
+    margin-top: 10px;
     margin-bottom: 20px;
     padding-top: 5px;
 }
-.articles {
-    margin: 0px 5px 30px 5px;
-    height: 520px;
+.article-container {
+    height: 580px;
 }

@@ -11,55 +11,36 @@
     </head>
     <body>
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            
             <a class="navbar-brand" href="#">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              
                 <ul class="navbar-nav mr-auto">
-                <!-- <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.nytimes.com/">New York Times</a>
                 </li>
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> -->
+
             </div>
+
         </nav>
-        <!-- <div class="row"> -->
-            <div class="jumbotron jumbotron-fluid">
-                <!-- <div class="container-fluid"> -->
-                <h1 class="display-4">New York Times</h1>
-                <p class="lead">News Article Archive Search Engine</p>
-                <!-- </div> -->
-            </div>
-        <!-- </div>             -->
+        <div class="jumbotron jumbotron-fluid">
+    
+            <h1 class="display-4">New York Times</h1>
+            <p class="lead">News Article Archive Search Engine</p>
+            
+        </div>
+        
         <div class="row main-row">
-            <div class="col-md-3">
-                <div class="card search">
+            <div class="col-md-3 search-col">
+                <div class="card search-container">
                     <div class="card-header bg-info">
-                    Featured
+                    Search Filter
                     </div>
-                    <div class="card-body">
+                    <div class="card-body search-body">
                         
                         <div class="form-group">
                             <label for="exampleFormControlInput1">News Article Item</label>
@@ -69,21 +50,11 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Limit Search Results</label>
                             <select class="form-control" id="FormControlSelect">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
                                 <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
                                 <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
                                 <option>15</option>
+                                <option>20</option>
+                                <option>25</option>
                             </select>
                         </div>
 
@@ -97,11 +68,11 @@
                                 <input class="form-control" id="date2" name="date2" value="" placeholder="YYYYMMDD" type="text"/>
                         </div> 
 
-                    <a href="#" class="btn btn-primary">Search</a>
+                    <a href="#" class="btn btn-primary search-btn">Search</a>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-9">
+            <div class="col-xl-9 results-col">
             </div>
         </div>
         
