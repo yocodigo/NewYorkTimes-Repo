@@ -3,6 +3,7 @@
 }
 .main-row {
     padding: 0px 40px;
+    margin: 0px;
 }
 .search-col {
     padding: 15px 15px 0px 0px; 
@@ -24,12 +25,10 @@
 h1, p {
     text-align: center;
 }
-/* .card-body .search-body { */
 .card-body {    
     position: relative;
 }
-/* .article-link .search-btn { */
-a {    
+.btn {    
     position: absolute;
     bottom: 0;
     margin-top: 10px;
