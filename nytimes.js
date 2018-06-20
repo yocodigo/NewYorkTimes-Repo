@@ -1,4 +1,13 @@
 $( document ).ready(function() {
+
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 0) {
+            $('.navbar').css('opacity', 0.9);
+          } else {
+            $('.navbar').css('opacity', 1);
+          }
+        });
+      
     // var date_input=$('input[name="date"]'); //our date input has the name "date"
     //     var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
     //     date_input.datepicker({
@@ -73,7 +82,7 @@ $( document ).ready(function() {
                 column.append(div1);
                 articleRow.append(column);
 
-                $("body").append(articleRow);
+                $(".col-xl-9").append(articleRow);
 
             }
             console.log(result);

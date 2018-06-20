@@ -1,5 +1,8 @@
+.col-md-3 {
+    padding-left: 0px; 
+}
 .search {
-    margin: 0px 20%;
+    margin: 0px 10%;
 }
 h1, p {
     text-align: center;
@@ -11,8 +14,9 @@ h1, p {
     position: absolute;
     bottom: 0;
     margin-bottom: 20px;
+    padding-top: 5px;
 }
 .articles {
-    margin: 30px 20px;
+    margin: 0px 5px 30px 5px;
     height: 520px;
 }
