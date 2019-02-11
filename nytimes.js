@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+b$( document ).ready(function() {
 
         $(window).scroll(function() {
           if ($(this).scrollTop() > 0) {
