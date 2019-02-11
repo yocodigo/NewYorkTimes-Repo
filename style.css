@@ -2,13 +2,15 @@
     margin-bottom: 15px;
 }
 .main-row {
-    padding: 0px 40px;
-    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
-.search-col {
+/* .search-col {
     padding: 15px 15px 0px 0px; 
     margin-bottom: 20px;
-}
+} */
 .article-col {
     padding: 0px 20px 20px 0px; 
 }
