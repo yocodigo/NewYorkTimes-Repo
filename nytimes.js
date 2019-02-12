@@ -1,4 +1,4 @@
-b$( document ).ready(function() {
+$( document ).ready(function() {
 
         $(window).scroll(function() {
           if ($(this).scrollTop() > 0) {
@@ -8,12 +8,20 @@ b$( document ).ready(function() {
           }
         });
     
-    $(".btn").on("click", function() {
+    // New York Times API Key
+    const key = "PPIwJu7U73sqD1B05BIo7bkr4Q18fssQ";
+    
+    // Variables that store user input
+    let beginDate = $("#date1").val();
+    let endDate = $("#date2").val();
+    let searchTerm = "";
+    let searchResult = 0;
+
+    // Base URL
+    let urlBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+
+    $("#search").on("click", function() {               
         
-        const key = "f26a33147e204c9d90988e8d071b0227";
-        let beginDate = $("#date1").val();
-        let endDate = $("#date2").val();
-        let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         let article = $('#articleInput').val();
         const select = $('select').val();
 
@@ -30,8 +38,7 @@ b$( document ).ready(function() {
         }).done(function(result) {
             let articleRow = $("<div>");
             
-            articleRow.attr("class", "row");
-            
+            articleRow.attr("class", "row");            
 
             for(let i = 0; i <= select - 1; i++) {
                 let column = $("<div>");
@@ -82,7 +89,5 @@ b$( document ).ready(function() {
             throw err;
         
         });
-
     });
-
 });
