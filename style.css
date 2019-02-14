@@ -1,6 +1,10 @@
 .jumbotron {
     margin-bottom: 15px;
 }
+.badge {
+    position: absolute;
+    top: 1rem;
+}
 .main-row {
     padding: 0px;
     margin-left: auto;
@@ -12,7 +16,10 @@
 }
 .card-footer {
     width: 100%;
-    text-align: center;
+    margin-top: 4rem;
+}
+.articleHeadline {
+    margin-bottom: 2rem;
 }
 .article-col {
     padding: 0px 20px 20px 0px; 
@@ -25,13 +32,20 @@
 }
 .search-container {
     margin: 0px 0 20px 0px;
-    height: 580px;
+    height: 500px;
 }
 h1, p {
     text-align: center;
 }
-.card-body {    
+.inside-card {
+    padding: 1rem;
+    margin-bottom: 0px;
+    width: 220px;
+    height: 520px;
+}
+.outer-body {    
     position: relative;
+    margin-bottom: 5rem;
 }
 .btn {    
     position: absolute;
@@ -42,4 +56,11 @@ h1, p {
 }
 .article-container {
     height: 580px;
+}
+.search-body {
+    margin-bottom: 10px;
+}
+.card-img-top {
+    width: 220px;
+    height: 220px;
 }
