@@ -40,8 +40,8 @@ h1, p {
 .inside-card {
     padding: 1rem;
     margin-bottom: 0px;
-    width: 220px;
-    height: 520px;
+    /* width: 50%;
+    height: 50%; */
 }
 .outer-body {    
     position: relative;
@@ -63,4 +63,7 @@ h1, p {
 .card-img-top {
     width: 220px;
     height: 220px;
+}
+.card-deck {
+    height: 700px;
 }

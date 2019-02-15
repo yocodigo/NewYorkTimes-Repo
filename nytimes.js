@@ -17,6 +17,7 @@ $( document ).ready(function() {
     let searchTerm = "";
     let searchResult = 0;
     let articleCounter = 0;
+    let rowCounter = 0;
 
     // Base URL
     const urlBase = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=`;
@@ -28,32 +29,42 @@ $( document ).ready(function() {
             method: 'GET',
         }).then(function(result) {
           
-            for (var i = 0; i < articleCount; i++) {
+            for (let i = 0; i < articleCount; i++) {                
+                
+                articleCounter++;              
+                let row = $("<div>"), cardDeck = $("<div>"), articleCard = $("<div>");;
 
-                // Add to the Article Counter (to make sure we show the right number)
-                articleCounter++;
-        
+                // Add a new row to card area and a new card deck to the newly created row
+                if(articleCounter == 1 || (articleCounter / 4 % 1) == 0) {                    
+                    rowCounter++;
+                    $("#card-area").append(row);
+                    row.attr("id", "row-" + rowCounter);                    
+                    $("#row-" + rowCounter).append(cardDeck);                        
+                }               
+                
+                // Insert a unique id to the row and the deck
+                cardDeck.addClass("card-deck");
+                cardDeck.attr("id", "card-deck-" + rowCounter);
+
                 // Create the HTML card (section) and add the article content for each
-                let articleSection = $("<div>");
-                articleSection.addClass("card inside-card border-dark mb-3");
-                articleSection.attr("id", "article-card-" + articleCounter);
-                articleSection.attr("style", "width: 100%");
-                $("#article-section").append(articleSection);                
+                $("#card-deck-" + rowCounter).append(articleCard);
+                articleCard.addClass("card inside-card border-dark mb-3");
+                articleCard.attr("id", "article-card-" + articleCounter);                                
+                console.log("article counter: ", articleCounter, " row: ", row, " article card: ", articleCard);                    
 
                 // Adding article image
-                let cardImg = $("<img><h5><span class='badge badge-dark'>" +
+                let articleImg = $("<img><h5><span class='badge badge-dark'>" +
                 articleCounter + "</span>");
-                cardImg.addClass("card-img-top");
-                cardImg.attr("src", "https://static01.nyt.com/" + result.response.docs[i].multimedia[0].url);
-                cardImg.attr("alt", "image not found");
-                $("#article-card-" + articleCounter).append(cardImg);
-                
-                
+                articleImg.addClass("card-img-top");
+                articleImg.attr("src", "https://static01.nyt.com/" + result.response.docs[i].multimedia[0].url);
+                articleImg.attr("alt", "image not found");
+                $("#article-card-" + articleCounter).append(articleImg); 
+                                            
                 // Adds the card body
-                let cardBody = $("<div>");
-                cardBody.addClass("card-body");
-                articleSection.attr("id", "article-body-" + articleCounter);
-                $("#article-section").append(cardBody);
+                let articleBody = $("<div>");
+                articleBody.addClass("card-body");
+                articleBody.attr("id", "article-body-" + articleCounter);
+                $("#article-card-" + articleCounter).append(articleBody);
 
                 // Confirm that the specific JSON for the article isn't missing any details
                 // If the article has a headline include the headline in the HTML
@@ -80,7 +91,7 @@ $( document ).ready(function() {
                 .append("<a href='" + result.response.docs[i].web_url + "'>" +
                     result.response.docs[i].web_url + "</a>"
                 );  
-                console.log(result);    
+                // console.log(result);                  
             }
         });
     }
