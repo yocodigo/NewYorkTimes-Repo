@@ -38,6 +38,7 @@ $( document ).ready(function() {
                 if(articleCounter == 1 || (articleCounter / 4 % 1) == 0) {                    
                     rowCounter++;
                     $("#card-area").append(row);
+                    row.addClass("card-row");
                     row.attr("id", "row-" + rowCounter);                    
                     $("#row-" + rowCounter).append(cardDeck);                        
                 }               
@@ -48,7 +49,7 @@ $( document ).ready(function() {
 
                 // Create the HTML card (section) and add the article content for each
                 $("#card-deck-" + rowCounter).append(articleCard);
-                articleCard.addClass("card inside-card border-dark mb-3");
+                articleCard.addClass("card article-card border-dark mb-3");
                 articleCard.attr("id", "article-card-" + articleCounter);                                
                 console.log("article counter: ", articleCounter, " row: ", row, " article card: ", articleCard);                    
 
@@ -74,24 +75,17 @@ $( document ).ready(function() {
                     "<h5 class='articleHeadline mx-auto'><strong> " +
                     result.response.docs[i].headline.main + "</strong></h3>"
                     );
-                }        
-        
-                // If the article has a byline include the headline in the HTML
-                if (result.response.docs[i].byline && result.response.docs[i].byline.original) {
-                $("#article-body-" + articleCounter)
-                    .append("<p>" + result.response.docs[i].byline.original + "</p>");        
                 }
         
                 // Then display the remaining fields in the HTML (Section Name, Date, URL)
-                $("#articleCard-" + articleCounter)
+                $("#article-body-" + articleCounter)
                 .append("<h5>Section: " + result.response.docs[i].section_name + "</h5>");
-                $("#articleCard-" + articleCounter)
-                .append("<h5>" + result.response.docs[i].pub_date + "</h5>");
-                $("#articleCard-" + articleCounter)
-                .append("<a href='" + result.response.docs[i].web_url + "'>" +
-                    result.response.docs[i].web_url + "</a>"
-                );  
-                // console.log(result);                  
+                $("#article-body-" + articleCounter)
+                .append("<p>" + result.response.docs[i].snippet + "</p>");
+                $("#article-body-" + articleCounter)                
+                .append("<a href='" + result.response.docs[i].web_url + "' target='_blank' class='btn btn-primary'>Link</a>"
+                );                
+                console.log(result);                  
             }
         });
     }
@@ -100,8 +94,7 @@ $( document ).ready(function() {
         
         event.preventDefault();
         articleCounter = 0;
-        $("#card-section").empty();
-        
+        $("#card-section").empty();        
 
         beginDate = $("#date1").val();
         endDate = $("#date2").val();
