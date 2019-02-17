@@ -18,6 +18,7 @@ $( document ).ready(function() {
     let searchResult = 0;
     let articleCounter = 0;
     let rowCounter = 0;
+    let newRow = 4;
 
     // Base URL
     const urlBase = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=`;
@@ -32,11 +33,13 @@ $( document ).ready(function() {
             for (let i = 0; i < articleCount; i++) {                
                 
                 articleCounter++;              
-                let row = $("<div>"), cardDeck = $("<div>"), articleCard = $("<div>");;
-
+                let row = $("<div>"), cardDeck = $("<div>"), articleCard = $("<div>");
+                
                 // Add a new row to card area and a new card deck to the newly created row
-                if(articleCounter == 1 || (articleCounter / 4 % 1) == 0) {                    
+                if(articleCounter == 1 || articleCounter == newRow) {                    
                     rowCounter++;
+                    newRow = articleCounter + 3;
+                    console.log(newRow);
                     $("#card-area").append(row);
                     row.addClass("card-row");
                     row.attr("id", "row-" + rowCounter);                    
@@ -54,12 +57,14 @@ $( document ).ready(function() {
                 console.log("article counter: ", articleCounter, " row: ", row, " article card: ", articleCard);                    
 
                 // Adding article image
-                let articleImg = $("<img><h5><span class='badge badge-dark'>" +
-                articleCounter + "</span>");
-                articleImg.addClass("card-img-top");
-                articleImg.attr("src", "https://static01.nyt.com/" + result.response.docs[i].multimedia[0].url);
-                articleImg.attr("alt", "image not found");
-                $("#article-card-" + articleCounter).append(articleImg); 
+                if(result.response.docs[i].multimedia !== "null") {
+                    let articleImg = $("<img><h5><span class='badge badge-dark'>" +
+                    articleCounter + "</span>");
+                    articleImg.addClass("card-img-top");
+                    articleImg.attr("src", "https://static01.nyt.com/" + result.response.docs[i].multimedia[0].url);
+                    articleImg.attr("alt", "image not found");
+                    $("#article-card-" + articleCounter).append(articleImg); 
+                }    
                                             
                 // Adds the card body
                 let articleBody = $("<div>");
