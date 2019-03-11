@@ -1,76 +1,77 @@
 .jumbotron {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 .badge {
-    position: absolute;
-    top: 1rem;
+  position: absolute;
+  top: 1rem;
 }
-.main-row {
-    padding: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
+.main-row { 
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}           
 #clear {
-    margin-left: 90px;
+  margin-left: 90px;
 }
 .card-footer {
-    width: 100%;
-    margin-top: 4rem;
+  width: 100%;
+  margin-top: 4rem;
 }
 .articleHeadline {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .article-col {
-    padding: 0px 20px 20px 0px; 
+  padding: 0px 20px 20px 0px;
 }
 .results-col {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 .articleRow {
-    padding: 0px 30px 0px 30px;
+  padding: 0px 30px 0px 30px;
 }
 .search-container {
-    margin: 0px 0 20px 0px;
-    height: 500px;
+  margin: 0px 0 20px 0px;
+  height: 500px;
 }
-h1, .lead {
-    text-align: center;
+h1,
+.lead {
+  text-align: center;
 }
 p {
-    text-align: left;
+  text-align: left;
 }
 .article-card {
-    padding: 1rem;
-    margin-bottom: 10px;
-    width: 360px;
-    height: 660px;
+  padding: 1rem;
+  margin-bottom: 10px;
+  width: 360px;
+  height: 660px;
 }
-.outer-body {    
-    position: relative;
-    margin-bottom: 5rem;
+.outer-body {
+  position: relative;
+  margin-bottom: 5rem;
 }
-.btn {    
-    position: absolute;
-    bottom: 0;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding-top: 5px;
+.btn {
+  position: absolute;
+  bottom: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 5px;
 }
 .article-container {
-    height: 580px;
+  height: 580px;
 }
 .search-body {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .card-img-top {
-    width: 340px;
-    height: 340px!;
+  width: 340px;
+  height: 340px!;
 }
 .card-deck {
-    height: 700px;
+  height: 700px;
 }
 .card-row {
-    height: 700px;
-    margin-bottom: 50px;
+  height: 700px;
+  margin-bottom: 50px;
 }
